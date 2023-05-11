@@ -13,11 +13,11 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <SEO seoData={seoData} />
-      <Headroom>
-        <Header />
+      <Headroom style={{ "height": "1px" }}>
+        <Header  />
       </Headroom>
-      <div>{children}</div>
-      <Footer />
+      <div style={{ "marginLeft": "10%", "marginRight": "10%", "marginTop": "10%" }}>{children}</div>
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

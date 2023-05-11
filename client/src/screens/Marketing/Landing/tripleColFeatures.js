@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../../styles/theme';
-import { FcAdvertising, FcAutomatic, FcBusinessContact } from 'react-icons/fc';
+import { FcAdvertising, FcAutomatic, FcBusinessContact, FcEditImage } from 'react-icons/fc';
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.backgroundLanding};
@@ -16,7 +16,7 @@ const LargeHeader = styled.h3`
   text-align: center;
   font-size: 1.875rem;
   line-height: 2rem;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: -0.025em;
 
   @media (min-width: ${breakpoints.small}) {
@@ -36,6 +36,7 @@ const SectionDescription = styled.p`
 `;
 
 const ContentWrapper = styled.div`
+  text-align:center;
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
@@ -64,10 +65,13 @@ const Column = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  background-color: ${colors.indigo500};
+  background-color: rgba(47, 85, 212, 0.1);
   border-radius: 0.375rem;
-  height: 3rem;
-  width: 3rem;
+  height: 65px;
+  width: 65px;
+  line-height: 65px;
+  padding: 9px;
+  
 `;
 
 const TextWrapper = styled.div`
@@ -86,32 +90,17 @@ const Paragraph = styled.p`
   line-height: 1.5rem;
 `;
 
-const StyledAdvertising = styled(FcAdvertising)`
+const StyledAdvertising = styled(FcEditImage)`
   margin: 0.5rem;
   height: 2rem;
   width: 2rem;
 `;
 
-const StyledAutomatic = styled(FcAutomatic)`
-  margin: 0.5rem;
-  height: 2rem;
-  width: 2rem;
-`;
-
-const StyledContact = styled(FcBusinessContact)`
-  margin: 0.5rem;
-  height: 2rem;
-  width: 2rem;
-`;
 
 const TripleColFeatures = () => (
   <Wrapper>
     <Heading>
-      <LargeHeader>Main Features</LargeHeader>
-      <SectionDescription>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum
-        cupiditate veritatis in, accusamus quisquam.
-      </SectionDescription>
+      <LargeHeader>How it Works ?</LargeHeader>
     </Heading>
     <ContentWrapper>
       <Column>
@@ -119,35 +108,34 @@ const TripleColFeatures = () => (
           <StyledAdvertising />
         </IconWrapper>
         <TextWrapper>
-          <SmallHeader>Feature #1</SmallHeader>
+          <SmallHeader>Create</SmallHeader>
           <Paragraph>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          Provide company-specific answers and download your handbook as a Microsoft Word Document or pdf. Ongoing updates to the handbook.
           </Paragraph>
         </TextWrapper>
       </Column>
       <Column>
         <IconWrapper>
-          <StyledAutomatic />
+         <svg style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path>
+          </svg>
         </IconWrapper>
         <TextWrapper>
-          <SmallHeader>Feature #2</SmallHeader>
+          <SmallHeader>Send</SmallHeader>
           <Paragraph>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          Send to all your employess and obtain legally binding electronic signatures. Automated distribution with any updates. Built-in approval.
           </Paragraph>
         </TextWrapper>
       </Column>
       <Column>
         <IconWrapper>
-          <StyledContact />
+          <svg stroke="currentColor" style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} stroke-width="0" viewBox="0 0 24 24"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"></path><path d="M7 12h2v5H7zM15 7h2v10h-2zM11 14h2v3h-2zM11 10h2v2h-2z"></path></svg>
         </IconWrapper>
 
         <TextWrapper>
-          <SmallHeader>Feature #3</SmallHeader>
+          <SmallHeader>Track</SmallHeader>
           <Paragraph>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-            suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          Track how many employees viewed and signed. Audit-ready reports for legal compliance with esignatures, views, versions and emails.
           </Paragraph>
         </TextWrapper>
       </Column>

@@ -60,8 +60,8 @@ const InnerWrapper = styled.div`
 
 const Pricing = () => (
   <Background>
-    <PricingHeader />
-    <BackgroundSecondary>
+    {/* <PricingHeader /> */}
+    {/* <BackgroundSecondary>
       <InnerBackgroundWrapper>
         <InnerBackground />
         <InnerWrapper>
@@ -70,7 +70,7 @@ const Pricing = () => (
           <BasicCard title="Scale" price="349" left={false} />
         </InnerWrapper>
       </InnerBackgroundWrapper>
-    </BackgroundSecondary>
+    </BackgroundSecondary> */}
   </Background>
 );
 

@@ -1,19 +1,27 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Link from 'next/link';
-import { breakpoints } from '../../../styles/theme';
+import {breakpoints} from '../../../styles/theme';
 
-const Container = styled.div`
-  display: grid;
+import Card from '../../../components/Common/Card';
+import FieldLabel from '../../../components/Common/forms/FieldLabel';
+import TextInput from '../../../components/Common/forms/TextInput';
+import TextInputWrapper from '../../../components/Common/forms/TextInputWrapper';
+
+import Signup from "../../Auth/Signup/signup"
+
+const Container = styled.div `
+  display: flex;
   grid-template-columns: auto auto;
-  background-color: ${(props) => props.theme.backgroundLanding};
+  background-color: ${ (props) => props.theme.backgroundLanding};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0% 0%;
 `;
 
-const HeroTextContainer = styled.div`
+const HeroTextContainer = styled.div `
   padding: 3rem 1rem 5rem;
+  width:66%;
   text-align: center;
   @media (min-width: ${breakpoints.large}) {
     padding: 6rem 2rem 12rem;
@@ -21,22 +29,22 @@ const HeroTextContainer = styled.div`
   }
 `;
 
-const HeroHeader = styled.h2`
+const HeroHeader = styled.h2 `
   font-size: 2.25rem;
   letter-spacing: -0.03rem;
   line-height: 2.5rem;
-  font-weight: 800;
+  font-weight: 400;
   @media (min-width: ${breakpoints.small}) {
     line-height: 1;
     font-size: 3.3rem;
   }
 `;
 
-const Span = styled.span`
-  color: ${(props) => props.theme.primary};
+const Span = styled.span `
+  color: ${ (props) => props.theme.primary};
 `;
 
-const Paragraph = styled.p`
+const Paragraph = styled.p `
   margin-top: 0.75rem;
   font-size: 1.125rem;
   @media (min-width: ${breakpoints.small}) {
@@ -47,11 +55,13 @@ const Paragraph = styled.p`
   }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.button `
   margin-top: 1rem;
-  font-size: 1.5rem;
-  padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-  background-color: ${(props) => props.theme.primary};
+  border: 0px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.4rem 0.5rem 1rem;
+  background-color: #B23507;
   color: white;
   &:hover {
     opacity: 95%;
@@ -59,18 +69,18 @@ const StyledButton = styled.button`
   }
 `;
 
-const ImageContainer = styled.div`
-  display: none;
-  background-color: ${(props) => props.theme.backgroundLanding};
+const CustomizedCard = styled.div `
+  background-color: ${ (props) => props.theme.backgroundLanding};
   background-repeat: no-repeat;
-  background-position: 0% 0%;
-
+  width:30%;
+  display: flex;
+  text-align: center;
   @media (min-width: ${breakpoints.large}) {
     display: block;
   }
 `;
 
-const fadeInLeft = keyframes`
+const fadeInLeft = keyframes `
   from {
     opacity: 0;
     transform: translateX(1.5rem);
@@ -81,7 +91,7 @@ const fadeInLeft = keyframes`
   }
 `;
 
-const Image = styled.img`
+const Image = styled.img `
   margin-top: 3rem;
   padding: 3rem;
   height: calc(32rem * 330 / 416);
@@ -91,27 +101,26 @@ const Image = styled.img`
 `;
 
 const HeroSection = () => (
-  <Container>
-    <HeroTextContainer>
-      <HeroHeader>
-        Main Value Proposition of
-        <Span> your business</Span>
-      </HeroHeader>
-      <Paragraph>
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-        Elit sunt amet fugiat veniam occaecat fugiat aliqua.
-      </Paragraph>
-      <Link href="/auth/login">
-        <a>
-          <StyledButton type="primary">Get started &#8594;</StyledButton>
-        </a>
-      </Link>
-    </HeroTextContainer>
-
-    <ImageContainer>
-      <Image src="/illustrations/undraw_stepping_up_g6oo.svg" alt="Step Up" />
-    </ImageContainer>
-  </Container>
+    <Container>
+        <HeroTextContainer >
+            <HeroHeader>
+                A Better Way to Manage Your Employee
+                <br/>
+                <span>Handbook & Policies.</span>
+            </HeroHeader>
+            <Paragraph>
+                All-in-one platform to create, send and track your company handbook. Human
+                Resources (HR) team time saver to update with complete access to compliance
+                data.
+            </Paragraph>
+            <a>
+              <StyledButton type="primary">Explore Now &#8594;</StyledButton>
+            </a>
+        </HeroTextContainer>
+        <CustomizedCard>
+           <Signup />
+        </CustomizedCard>
+    </Container>
 );
 
 export default HeroSection;

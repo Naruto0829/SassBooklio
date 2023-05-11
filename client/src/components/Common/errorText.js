@@ -5,6 +5,7 @@ const ErrorText = styled.div`
   font-size: 0.8em;
   margin-bottom: 0.5em;
   margin-top: -0.2rem;
+  text-align:left;
 `;
 
 export default ErrorText;

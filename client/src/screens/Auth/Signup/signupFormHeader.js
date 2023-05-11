@@ -16,20 +16,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const AltText = styled.div`
-  text-align: center;
-  padding-bottom: 2rem;
-  color: ${colors.gray500};
-`;
-
 const SignupFormHeader = () => (
   <Wrapper>
-    <Title>Sign-Up for an Account</Title>
-    <AltText>
-      <Link href="/auth/login">
-        <a>Already Have an Account? Login here</a>
-      </Link>
-    </AltText>
+    <Title>Get 30 days FREE Trial</Title>
   </Wrapper>
 );
 

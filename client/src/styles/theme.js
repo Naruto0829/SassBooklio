@@ -37,6 +37,7 @@ export const colors = {
   indigo400: '#8DA2FB',
   indigo500: '#6875F5',
   indigo600: '#5850EC',
+  landing:'#B23507',
   indigo700: '#5145CD',
   indigo800: '#42389D',
   indigo900: '#42389D',

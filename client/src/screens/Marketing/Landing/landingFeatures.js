@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../../styles/theme';
 
-import { FcApproval, FcBarChart, FcCollect, FcConferenceCall } from 'react-icons/fc';
+import { FcApproval, FcBarChart, FcCheckmark, FcCollect, FcConferenceCall } from 'react-icons/fc';
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.backgroundLanding};
@@ -21,7 +21,7 @@ const Container = styled.div`
 const LargeHeader = styled.h4`
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 800;
+  font-weight: 400;
   text-align: center;
   @media (min-width: ${breakpoints.small}) {
     font-size: 1.875rem;
@@ -80,28 +80,6 @@ const FeatureWrapper1 = styled.div`
   }
 `;
 
-const FeatureWrapper2 = styled.div`
-  margin-top: 3rem;
-  @media (min-width: ${breakpoints.small}) {
-    margin-top: 4rem;
-  }
-  @media (min-width: ${breakpoints.large}) {
-    display: grid;
-    grid-auto-flow: row dense;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 2rem;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 6rem;
-  }
-`;
-
-const FeatureWrapper2b = styled.div`
-  @media (min-width: ${breakpoints.large}) {
-    grid-column-start: 2;
-  }
-`;
-
 const List = styled.ul`
   margin-top: 2.5rem;
   margin-left: -1rem;
@@ -112,136 +90,71 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  margin-top: 2.5rem;
+  margin-top: 0.1rem;
 `;
 
 const Item = styled.div`
   display: flex;
 `;
 
-const ImageWrapper = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  width: 3rem;
-  border-radius: 0.375rem;
-  color: ${colors.white};
-  background-color: ${colors.indigo500};
-`;
-
-const StyledApproval = styled(FcApproval)`
+const StyledApproval = styled(FcCheckmark)`
   height: 2rem;
   width: 2rem;
+  :before {
+      content: '\e9c2';
+  }
 `;
 
-const StyledBarChart = styled(FcBarChart)`
-  height: 2rem;
-  width: 2rem;
-`;
-
-const StyledCollect = styled(FcCollect)`
-  height: 2rem;
-  width: 2rem;
-`;
-
-const StyledCall = styled(FcConferenceCall)`
-  height: 2rem;
-  width: 2rem;
-`;
 
 const LandingFeatures = () => (
   <Container>
     <FeatureWrapper1>
+     <FeatureImage
+        aspectRatio={532 / 417}
+        src="assets/images/company/about2.png"
+        alt="Abstract illustration of man wearing a turtleneck standing next to floating graphs and images"
+      />
       <div>
-        <LargeHeader>Awesome Feature about App 1</LargeHeader>
+        <LargeHeader>A New Way to manage <br/> employee handbook</LargeHeader>
         <LargeParagraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi recusandae,
-          porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit odit adipisci
-          optio iste blanditiis facere. Totam, velit.
+        Take the new way of managing your digital employee <>handbook</> with easy updates, revision controls, electronic signatures and audit-ready reports for your compliance. Send your newly created to all employees or on-boarded employees with in-built email or via your own configured email.
+        Collaborate easily with your team with approval process buit right in the platform. Share handbooks with your legal team or management for review.
         </LargeParagraph>
         <List>
           <ListItem>
             <Item>
-              <ImageWrapper>
-                <StyledApproval />
-              </ImageWrapper>
+              <StyledApproval />
               <TextWrapper>
-                <SmallHeader>Sub Feature 1</SmallHeader>
                 <SmallParagraph>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                  perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                  Multi-State
                 </SmallParagraph>
               </TextWrapper>
             </Item>
           </ListItem>
           <ListItem>
             <Item>
-              <ImageWrapper>
-                <StyledBarChart />
-              </ImageWrapper>
+              <StyledApproval />
               <TextWrapper>
-                <SmallHeader>Sub Feature 2</SmallHeader>
                 <SmallParagraph>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                  perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+                  Electronic Signautes
+                </SmallParagraph>
+              </TextWrapper>
+            </Item>
+          </ListItem>
+          <ListItem>
+            <Item>
+              <StyledApproval />
+              <TextWrapper>
+                <SmallParagraph>
+                  Ongoing Updates
                 </SmallParagraph>
               </TextWrapper>
             </Item>
           </ListItem>
         </List>
       </div>
-      <FeatureImage
-        aspectRatio={532 / 417}
-        src="/illustrations/undraw_Build_wireframe_re_ln7g.svg"
-        alt="Abstract illustration of man wearing a turtleneck standing next to floating graphs and images"
-      />
+     
     </FeatureWrapper1>
-    <FeatureWrapper2>
-      <FeatureWrapper2b>
-        <LargeHeader>Awesome Feature about App 2</LargeHeader>
-        <LargeParagraph>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex obcaecati natus
-          eligendi delectus, cum deleniti sunt in labore nihil quod quibusdam expedita nemo.
-        </LargeParagraph>
-        <List>
-          <ListItem>
-            <Item>
-              <ImageWrapper>
-                <StyledCollect />
-              </ImageWrapper>
-              <TextWrapper>
-                <SmallHeader>Sub Feature 1</SmallHeader>
-                <SmallParagraph>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                  perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-                </SmallParagraph>
-              </TextWrapper>
-            </Item>
-          </ListItem>
-          <ListItem>
-            <Item>
-              <ImageWrapper>
-                <StyledCall />
-              </ImageWrapper>
-              <TextWrapper>
-                <SmallHeader>Sub Feature 2</SmallHeader>
-                <SmallParagraph>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                  perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-                </SmallParagraph>
-              </TextWrapper>
-            </Item>
-          </ListItem>
-        </List>
-      </FeatureWrapper2b>
-      <FeatureImage
-        src="/illustrations/undraw_All_the_data_re_hh4w.svg"
-        aspectRatio={532 / 372}
-        alt="Abstract illustration of man wearing a suit standing next to floating graphs and images"
-      />
-    </FeatureWrapper2>
   </Container>
 );
 

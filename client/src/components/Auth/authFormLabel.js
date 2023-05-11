@@ -8,6 +8,7 @@ const Label = styled.label`
   line-height: 1.25rem;
   color: ${colors.gray700};
   padding-top: 0.5rem;
+  text-align:left;
 `;
 
 export default Label;

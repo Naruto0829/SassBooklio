@@ -6,7 +6,7 @@ const Button = styled.button`
   font-weight: 500;
   width: 100%;
   color: ${colors.white};
-  background-color: ${colors.indigo600};
+  background-color: ${colors.landing};
   border: 1px solid transparent;
   border-radius: 0.375rem;
   font-size: 0.875rem;

@@ -5,7 +5,8 @@ import { useRouter } from 'next/router';
 import AuthContext from '../../../utils/authContext';
 import ApiContext from '../../../utils/apiContext';
 import { ValidSchema, SignupAuth } from '../helpers';
-
+import styled from 'styled-components';
+import { colors, breakpoints } from '../../../styles/theme';
 import SEO from '../../../components/Marketing/Layout/seo';
 import ErrorText from '../../../components/Common/errorText';
 import InputWrapper from '../../../components/Common/forms/TextInputWrapper';
@@ -13,10 +14,9 @@ import Button from '../../../components/Auth/Buttons/authButton';
 import AuthCard from '../../../components/Auth/authCard';
 import Label from '../../../components/Auth/authFormLabel';
 import Input from '../../../components/Common/forms/TextInput';
-import ContinueWith from '../../../components/Auth/continueWith';
-import GoogleButton from '../../../components/Auth/Buttons/googleButton';
 import LoadingOverlay from '../../../components/Common/loadingOverlay';
 import SignUpFormHeader from './signupFormHeader';
+import Link from 'next/dist/client/link';
 
 // TODO: replace with actual data
 const getData = () => ({
@@ -75,31 +75,17 @@ const Signup = () => {
       location
     );
   };
+  
+  const RememberMeWrapper = styled.div`
+    display: flex;
+    align-items: center;
+  `;
 
-  //Google OAuth2 Signin
-  const GoogleSignin = async () => {
-    fetchInit();
-    let provider = new firebase.auth.GoogleAuthProvider();
-
-    //wait for firebase to confirm signup
-    let authRes = await firebase
-      .auth()
-      .signInWithPopup(provider)
-      .catch((error) => {
-        fetchFailure(error);
-      });
-
-    SignupAuth(
-      authRes,
-      firebase,
-      fetchFailure,
-      null,
-      domainUrl,
-      isInviteFlow,
-      invite_key,
-      location
-    );
-  };
+  const RememberMeLabel = styled.label`
+    margin-left: 0.1rem;
+    font-size: 0.925rem;
+    color: ${colors.coolGray900};
+  `;
 
   const seoData = {
     title: 'Saas Starter Kit Pro Sign up Page',
@@ -121,19 +107,6 @@ const Signup = () => {
           >
             {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
               <form onSubmit={handleSubmit}>
-                <Label htmlFor="email">Email:</Label>
-                <InputWrapper>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="email"
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.email}
-                    data-test-id="email"
-                  />
-                </InputWrapper>
-                {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
                 <Label htmlFor="username">First and Last Name:</Label>
                 <InputWrapper>
                   <Input
@@ -147,6 +120,20 @@ const Signup = () => {
                   />
                 </InputWrapper>
                 {errors.username && touched.username && <ErrorText>{errors.username}</ErrorText>}
+                <Label htmlFor="email">Email:</Label>
+                <InputWrapper>
+                  <Input
+                    type="email"
+                    name="email"
+                    id="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    data-test-id="email"
+                  />
+                </InputWrapper>
+                {errors.email && touched.email && <ErrorText>{errors.email}</ErrorText>}
+                
                 <Label htmlFor="password">Password:</Label>
                 <InputWrapper>
                   <Input
@@ -160,13 +147,17 @@ const Signup = () => {
                   />
                 </InputWrapper>
                 {errors.password && touched.password && <ErrorText>{errors.password}</ErrorText>}
+                <RememberMeWrapper>
+                  <input id="remember_me" name="remember_me" type="checkbox" />
+                  <RememberMeLabel htmlFor="remember_me">I Accept 
+                    <a> Terms And Condition</a>
+                  </RememberMeLabel>
+                </RememberMeWrapper>
+
                 <Button type="submit">SignUp</Button>
               </form>
             )}
           </Formik>
-
-          <ContinueWith />
-          <GoogleButton GoogleSignin={GoogleSignin} />
         </AuthCard>
       </div>
     </React.Fragment>

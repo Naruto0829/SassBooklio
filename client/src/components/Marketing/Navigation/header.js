@@ -7,6 +7,7 @@ import { colors, breakpoints } from '../../../styles/theme';
 import FlyoutMenu from './flyoutMenu';
 
 import Button from '../../Common/buttons/PrimaryButton';
+
 import MobileMenu from './mobileMenu';
 import LargeLogo from '../../../components/Common/svgs/LargeLogo';
 import ChevronDown from '../svgs/chevronDown';
@@ -112,92 +113,28 @@ const ButtonWrapper = styled.div`
   margin-left: 2rem;
 `;
 
-const SolutionsButton = styled.div`
-  color: ${colors.gray500};
-  display: inline-flex;
-  align-items: center;
-  font-weight: 500;
-  justify-content: space-between;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  cursor: pointer;
-
-  &:hover {
-    color: ${colors.gray900};
-  }
-  &:focus {
-    color: ${colors.gray900};
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-  }
-`;
-
-const StyledChevronDown = styled(ChevronDown)`
-  margin-left: 8px;
-  svg {
-    color: ${colors.gray500};
-
-    &:hover ${SolutionsButton} {
-      color: ${colors.gray500};
-    }
-    &:focus ${SolutionsButton} {
-      color: ${colors.gray500};
-    }
-  }
-`;
 
 const StyledLink = styled.a`
-  margin-left: 2.5rem;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: black;
-  &::before {
-    content: '';
-    margin-bottom: -5px;
-    position: absolute;
-    width: 0;
-    height: 6px;
-    bottom: 0;
-    left: 0;
-    background-color: red;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-  }
+  display: block;
+  color: #5e6367;
+  font-size: 12px;
+  background-color: transparent !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-family: var(--bs-font-sans-serif);
+  padding-left: 15px;
+  padding-right: 15px;
+ 
 
   &:hover {
     &::before {
       visibility: visible !important;
       width: 100%;
+      color: #2f55d4 !important;
     }
   }
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      margin-left: 2.5rem;
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: black;
-      &::before {
-        content: '';
-        margin-bottom: -5px;
-        position: absolute;
-        width: 0;
-        height: 6px;
-        bottom: 0;
-        left: 0;
-        background-color: red;
-        visibility: visible;
-        transition: all 0.3s ease-in-out;
-        width: 100%;
-      }
-    `}
 `;
 
 const Header = () => {
@@ -213,45 +150,43 @@ const Header = () => {
   useOutsideClick(refMobile, () => toggleMobileMenu(false));
 
   return (
-    <Container>
-      <LogoWrapper>
-        <Link href="/">
-          <a>
-            <LargeLogo />
-          </a>
+    <Container style={{ "paddingLeft": "15%", "paddingRight": "20%" }}>
+        <LogoWrapper>
+          <Link href="/">
+            <a>
+              <LargeLogo />
+            </a>
+          </Link>
+        </LogoWrapper>
+        <MenuWrapper ref={refMobile}>
+          <MenuButton onClick={mobileMenuHandler}>
+            <MenuImage src="/icons/menu.svg" alt="menu" />
+          </MenuButton>
+          {mobileMenu ? <MobileMenu mobileMenuHandler={mobileMenuHandler} /> : null}
+        </MenuWrapper>
+        <Nav>
+        <Link href="#Home" passHref>
+          <StyledLink>HOME</StyledLink>
         </Link>
-      </LogoWrapper>
-      <MenuWrapper ref={refMobile}>
-        <MenuButton onClick={mobileMenuHandler}>
-          <MenuImage src="/icons/menu.svg" alt="menu" />
-        </MenuButton>
-        {mobileMenu ? <MobileMenu mobileMenuHandler={mobileMenuHandler} /> : null}
-      </MenuWrapper>
-      <Nav>
-        <SolutionsWrapper onMouseOver={() => toggleMenu(true)} ref={ref}>
-          <SolutionsButton type="button">
-            Solutions
-            <StyledChevronDown height="1.25rem" width="1.25rem" />
-          </SolutionsButton>
-
-          {menu ? (
-            <FlyoutMenuWrapper>
-              <FlyoutMenu />
-            </FlyoutMenuWrapper>
-          ) : null}
-        </SolutionsWrapper>
-
-        <Link href="/pricing" passHref>
-          <StyledLink isActive={location.asPath === '/pricing'}>Pricing</StyledLink>
+        <Link href="#howitworks" passHref>
+          <StyledLink>HOW IT WORKS</StyledLink>
+        </Link>
+        <Link href="#features" passHref>
+          <StyledLink>FEATURES</StyledLink>
+        </Link>
+        <Link href="#pricing" passHref>
+          <StyledLink>PRICING</StyledLink>
+        </Link>
+        <Link href="#faq" passHref>
+          <StyledLink>FAQ</StyledLink>
+        </Link>
+        <Link href="#contact" passHref>
+          <StyledLink>CONTACT</StyledLink>
+        </Link>
+        <Link href="#signup" passHref>
+          <StyledLink>SIGN UP</StyledLink>
         </Link>
       </Nav>
-      <ButtonWrapper>
-        <Link href="/auth/login" passHref>
-          <a>
-            <Button>Sign-In</Button>
-          </a>
-        </Link>
-      </ButtonWrapper>
     </Container>
   );
 };
