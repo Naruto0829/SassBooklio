@@ -106,7 +106,7 @@ const StyledAdvertising = styled(FcEditImage)`
   width: 2rem;
 `;
 const FAQ = () => (
-  <Wrapper>
+  <Wrapper id="faq">
     <Heading>
       <LargeHeader>Frequently Asked Questions</LargeHeader>
       <Paragraph>

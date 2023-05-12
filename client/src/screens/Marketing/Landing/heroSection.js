@@ -17,6 +17,9 @@ const Container = styled.div `
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0% 0%;
+  @media (max-width: ${breakpoints.small}) {
+    flex-direction: column;
+  }
 `;
 
 const HeroTextContainer = styled.div `
@@ -26,6 +29,10 @@ const HeroTextContainer = styled.div `
   @media (min-width: ${breakpoints.large}) {
     padding: 6rem 2rem 12rem;
     text-align: left;
+  }
+
+  @media (max-width: ${breakpoints.small}) {
+    width:100%;
   }
 `;
 
@@ -78,6 +85,10 @@ const CustomizedCard = styled.div `
   @media (min-width: ${breakpoints.large}) {
     display: block;
   }
+
+  @media (max-width: ${breakpoints.small}) {
+    width:100%;
+  }
 `;
 
 const fadeInLeft = keyframes `
@@ -101,7 +112,7 @@ const Image = styled.img `
 `;
 
 const HeroSection = () => (
-    <Container>
+    <Container id="home">
         <HeroTextContainer >
             <HeroHeader>
                 A Better Way to Manage Your Employee

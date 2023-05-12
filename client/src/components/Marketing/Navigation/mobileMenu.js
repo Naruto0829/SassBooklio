@@ -157,6 +157,28 @@ const Button = styled.div`
     background-color: ${colors.indigo700};
   }
 `;
+const StyledLink = styled.a`
+  display: block;
+  color: #5e6367;
+  font-size: 12px;
+  background-color: transparent !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-family: var(--bs-font-sans-serif);
+  padding-left: 15px;
+  padding-right: 15px;
+ 
+
+  &:hover {
+    &::before {
+      visibility: visible !important;
+      width: 100%;
+      color: #2f55d4 !important;
+    }
+  }
+`;
 
 const MobileMenu = ({ mobileMenuHandler }) => (
   <Wrapper>
@@ -170,75 +192,29 @@ const MobileMenu = ({ mobileMenuHandler }) => (
     </Header>
     <div>
       <Nav>
-        <Link href="/pricing">
-          <a>
-            <Item>
-              <MenuImageWrapper>
-                {/*<!-- Heroicon name: view-grid -->*/}
-                <MenuImg src="/icons/view-grid.svg" alt="click" />
-              </MenuImageWrapper>
-              <Title>Pricing</Title>
-            </Item>
-          </a>
-        </Link>
-
-        <hr />
-        <h3>Solutions</h3>
-        <Link href="/product/page1">
-          <a>
-            <Item>
-              <MenuImageWrapper>
-                {/*<!-- Heroicon name: view-grid -->*/}
-                <MenuImg src="/icons/view-grid.svg" alt="click" />
-              </MenuImageWrapper>
-              <Title>Product Page 1</Title>
-            </Item>
-          </a>
-        </Link>
-        <Link href="/product/page2">
-          <a>
-            <Item>
-              <MenuImageWrapper>
-                {/*<!-- Heroicon name: view-grid -->*/}
-                <MenuImg src="/icons/view-grid.svg" alt="click" />
-              </MenuImageWrapper>
-              <Title>Product Page 2</Title>
-            </Item>
-          </a>
-        </Link>
-        <Link href="/product/page3">
-          <a>
-            <Item>
-              <MenuImageWrapper>
-                {/*<!-- Heroicon name: view-grid -->*/}
-                <MenuImg src="/icons/view-grid.svg" alt="click" />
-              </MenuImageWrapper>
-              <Title>Product Page 3</Title>
-            </Item>
-          </a>
-        </Link>
-        <Link href="/product/page4">
-          <a>
-            <Item>
-              <MenuImageWrapper>
-                {/*<!-- Heroicon name: view-grid -->*/}
-                <MenuImg src="/icons/view-grid.svg" alt="click" />
-              </MenuImageWrapper>
-              <Title>Product Page 4</Title>
-            </Item>
-          </a>
-        </Link>
+          <Link href="#home" passHref>
+            <StyledLink>HOME</StyledLink>
+          </Link>
+          <Link href="#howitworks" passHref>
+            <StyledLink>HOW IT WORKS</StyledLink>
+          </Link>
+          <Link href="#features" passHref>
+            <StyledLink>FEATURES</StyledLink>
+          </Link>
+          <Link href="#pricing" passHref>
+            <StyledLink>PRICING</StyledLink>
+          </Link>
+          <Link href="#faq" passHref>
+            <StyledLink>FAQ</StyledLink>
+          </Link>
+          <Link href="#contact" passHref>
+            <StyledLink>CONTACT</StyledLink>
+          </Link>
+          <Link href="#signup" passHref>
+            <StyledLink>SIGN UP</StyledLink>
+          </Link>
       </Nav>
     </div>
-    <ButtonWrapper1>
-      <ButtonWrapper2>
-        <Link href="/auth/login">
-          <a>
-            <Button>Sign up</Button>
-          </a>
-        </Link>
-      </ButtonWrapper2>
-    </ButtonWrapper1>
   </Wrapper>
 );
 

@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const SignupFormHeader = () => (
   <Wrapper>
-    <Title>Get 30 days FREE Trial</Title>
+    <Title style={{ "fontWeight": "500", "fontSize": "1.175rem" }}>Get 30 days FREE Trial</Title>
   </Wrapper>
 );
 

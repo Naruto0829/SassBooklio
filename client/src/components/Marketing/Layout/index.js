@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         <Header  />
       </Headroom>
       <div style={{ "marginLeft": "10%", "marginRight": "10%", "marginTop": "10%" }}>{children}</div>
-      {/* <Footer /> */}
+      <Footer id="contact" />
     </React.Fragment>
   );
 };

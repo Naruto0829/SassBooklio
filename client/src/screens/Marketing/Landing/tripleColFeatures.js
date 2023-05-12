@@ -98,7 +98,7 @@ const StyledAdvertising = styled(FcEditImage)`
 
 
 const TripleColFeatures = () => (
-  <Wrapper>
+  <Wrapper id="howitworks">
     <Heading>
       <LargeHeader>How it Works ?</LargeHeader>
     </Heading>

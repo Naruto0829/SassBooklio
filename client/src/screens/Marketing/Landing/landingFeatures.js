@@ -107,7 +107,7 @@ const StyledApproval = styled(FcCheckmark)`
 
 
 const LandingFeatures = () => (
-  <Container>
+  <Container  id="features">
     <FeatureWrapper1>
      <FeatureImage
         aspectRatio={532 / 417}

@@ -11,14 +11,13 @@ import Blog from './Blog';
 export default function Index() {
   return (
     <React.Fragment>
-      <HeroSection />
-      <TripleColFeatures />
-      <LandingFeature />
-      <KeyFeatures />
-      <SimplePricing />
+      <HeroSection/>
+      <TripleColFeatures/>
+      <LandingFeature/>
+      <KeyFeatures/>
+      <SimplePricing  />
       <FAQ />
-      <Blog />
-      <CTASection />
+      <Blog/>
     </React.Fragment>
   );
 }

@@ -165,7 +165,7 @@ const Header = () => {
           {mobileMenu ? <MobileMenu mobileMenuHandler={mobileMenuHandler} /> : null}
         </MenuWrapper>
         <Nav>
-        <Link href="#Home" passHref>
+        <Link href="#home" passHref>
           <StyledLink>HOME</StyledLink>
         </Link>
         <Link href="#howitworks" passHref>

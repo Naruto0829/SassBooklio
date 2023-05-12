@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../../styles/theme';
-import { FcAdvertising, FcAutomatic, FcBusinessContact, FcEditImage } from 'react-icons/fc';
+import { BsPersonGear, BsCalendar2Date } from "react-icons/bs";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.backgroundLanding};
@@ -134,16 +134,23 @@ const Author = styled.div`
 const Overlay = styled.div`
   opacity: 0.6;
   background: #3c4858;
-  border-top-left-radius: 6px !important;
-  border-top-right-radius: 6px !important;
+  border-top-left-radius: 13px !important;
+  border-top-right-radius: 13px !important;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
+  border-radius: 16px;
   left: 0;
+  height: 289px;
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  :hover{
+    opacity:0.7;
+  }
+  @media (max-width: ${breakpoints.small}) {
+    height: 218px;
+  }
 `;
 
 const BlogCoverletter = styled.div`
@@ -151,7 +158,7 @@ const BlogCoverletter = styled.div`
 `
 
 const Blog = () => (
-  <Wrapper>
+  <Wrapper id="contact">
     <Heading>
       <LargeHeader>Blog</LargeHeader>
       <SmallHeader>Reads Our LatestNews & Blog</SmallHeader>
@@ -180,7 +187,53 @@ const Blog = () => (
               </ul>
               <ReadmoreButton>Read More <img style={{ "width": "19px", "height": "24px" }} src="icons/forward.png"></img></ReadmoreButton>
           </BlogContent>
-          <Author><small>Calvin Carlo</small><small> 25th June 2021</small></Author>
+          <Author><small><BsPersonGear />Calvin Carlo</small><small> <BsCalendar2Date /> 25th June 2021</small></Author>
+      </Column>
+
+      <Column>
+          <BlogCoverletter>
+            <BlogImg src="/assets/images/blog/02.jpg" />
+          </BlogCoverletter>
+          <Overlay></Overlay>
+            <BlogTitle><a style={{"color": "#6f99cf"}}> How apps is changing the IT world</a></BlogTitle>
+            <BlogContent>
+              <ul style={{ "listStyle":"none", "display":"flex" }}>
+                <li style={{ "paddingRight":"10px" }}>
+                  <a style={{  "display": "flex", "color": "#6f6d6d", "lineHeight": "19px" }} >
+                    <img src="/icons/heart.png" style={{width:"20px"}}></img>33</a>
+                </li>
+                <li style={{ "paddingRight":"10px" }}>
+                  <a style={{  "display": "flex", "color": "#6f6d6d", "lineHeight": "19px" }}>
+                    <img src="/icons/message.png" style={{width:"20px"}} />08
+                  </a>
+                </li>
+              </ul>
+              <ReadmoreButton>Read More <img style={{ "width": "19px", "height": "24px" }} src="icons/forward.png"></img></ReadmoreButton>
+          </BlogContent>
+          <Author><small><BsPersonGear />Calvin Carlo</small><small> <BsCalendar2Date /> 25th June 2021</small></Author>
+      </Column>
+
+      <Column>
+          <BlogCoverletter>
+            <BlogImg src="/assets/images/blog/03.jpg" />
+          </BlogCoverletter>
+          <Overlay></Overlay>
+            <BlogTitle><a style={{"color": "#6f99cf"}}> Smartest Applications for Business </a></BlogTitle>
+            <BlogContent>
+              <ul style={{ "listStyle":"none", "display":"flex" }}>
+                <li style={{ "paddingRight":"10px" }}>
+                  <a style={{  "display": "flex", "color": "#6f6d6d", "lineHeight": "19px" }} >
+                    <img src="/icons/heart.png" style={{width:"20px"}}></img>33</a>
+                </li>
+                <li style={{ "paddingRight":"10px" }}>
+                  <a style={{  "display": "flex", "color": "#6f6d6d", "lineHeight": "19px" }}>
+                    <img src="/icons/message.png" style={{width:"20px"}} />08
+                  </a>
+                </li>
+              </ul>
+              <ReadmoreButton>Read More <img style={{ "width": "19px", "height": "24px" }} src="icons/forward.png"></img></ReadmoreButton>
+          </BlogContent>
+          <Author><small><BsPersonGear />Calvin Carlo</small><small> <BsCalendar2Date /> 25th June 2021</small></Author>
       </Column>
     </ContentWrapper>
   </Wrapper>

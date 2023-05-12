@@ -114,7 +114,7 @@ const spanItem = styled.span`
     font-weight: 600;
 `
 const SimplePricing = () => (
-  <Wrapper>
+  <Wrapper id="pricing">
     <Heading>
       <LargeHeader>Simple Pricing</LargeHeader>
         <Paragraph>
