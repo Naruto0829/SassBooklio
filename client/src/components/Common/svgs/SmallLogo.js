@@ -9,7 +9,7 @@ const SmallLogo = ({
   width = 24,
   className
 }) => (
-  <img src="/assets/images/logo-light.png" style={{height: "3.5rem"}} />
+  <img src="/assets/images/logo-light.png" style={{"height": "3.2rem", "marginRight": "15px"}} />
 );
 
 export default SmallLogo;

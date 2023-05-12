@@ -187,7 +187,7 @@ const Footer = () => {
                   <BsCardText />
                   <TextArea />
                 </InputWrapper>
-                <Button type="submit">SignUp</Button>
+                <Button type="submit">Send Message</Button>
               </form>
           </Formik>
         </Column>

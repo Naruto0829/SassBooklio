@@ -16,13 +16,11 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
   height: 5rem;
   background-color: ${colors.white};
-  @media (min-width: ${breakpoints.small}) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+  padding-left: 13%;
+  padding-right: 13%;
+  
   @media (min-width: ${breakpoints.medium}) {
     justify-content: flex-start;
   }
@@ -150,7 +148,7 @@ const Header = () => {
   useOutsideClick(refMobile, () => toggleMobileMenu(false));
 
   return (
-    <Container style={{ "paddingLeft": "15%", "paddingRight": "20%" }}>
+    <Container>
         <LogoWrapper>
           <Link href="/">
             <a>
@@ -183,8 +181,8 @@ const Header = () => {
         <Link href="#contact" passHref>
           <StyledLink>CONTACT</StyledLink>
         </Link>
-        <Link href="#signup" passHref>
-          <StyledLink>SIGN UP</StyledLink>
+        <Link href="auth/login" passHref>
+          <StyledLink>SIGN IN</StyledLink>
         </Link>
       </Nav>
     </Container>

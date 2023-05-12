@@ -16,7 +16,6 @@ import Label from '../../../components/Auth/authFormLabel';
 import Input from '../../../components/Common/forms/TextInput';
 import LoadingOverlay from '../../../components/Common/loadingOverlay';
 import SignUpFormHeader from './signupFormHeader';
-import Link from 'next/dist/client/link';
 
 // TODO: replace with actual data
 const getData = () => ({
@@ -61,6 +60,7 @@ const Signup = () => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch((error) => {
+        debugger;
         fetchFailure(error);
       });
 
@@ -95,7 +95,7 @@ const Signup = () => {
   return (
     <React.Fragment>
       <SEO seoData={seoData} />
-      <div>
+      <div style={{    width: "100%"}}>
         {isLoading && <LoadingOverlay />}
         <SignUpFormHeader />
 

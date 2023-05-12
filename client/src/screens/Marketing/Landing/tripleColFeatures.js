@@ -71,6 +71,9 @@ const IconWrapper = styled.div`
   width: 65px;
   line-height: 65px;
   padding: 9px;
+  margin-left: 50%;
+  margin-right: 50%;
+  transform: translate(-50%, 0);
   
 `;
 

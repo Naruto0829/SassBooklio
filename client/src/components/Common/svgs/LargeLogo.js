@@ -11,7 +11,7 @@ const LargeLogo = ({
   className
 }) => (
   <>
-    <img src='/images/logo-light.png'  style={{ "height": "3.5rem", "marginRight" : "15px" , "marginTop": "28px"}} ></img>
+    <img src='/images/logo-light.png'  style={{ "height": "3rem", "marginRight" : "15px"}} ></img>
   </>
 );
 

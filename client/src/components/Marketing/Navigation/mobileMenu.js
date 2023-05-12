@@ -210,8 +210,8 @@ const MobileMenu = ({ mobileMenuHandler }) => (
           <Link href="#contact" passHref>
             <StyledLink>CONTACT</StyledLink>
           </Link>
-          <Link href="#signup" passHref>
-            <StyledLink>SIGN UP</StyledLink>
+          <Link href="auth/login" passHref>
+            <StyledLink>SIGN IN</StyledLink>
           </Link>
       </Nav>
     </div>
