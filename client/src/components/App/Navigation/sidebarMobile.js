@@ -18,7 +18,9 @@ import {
   FcTimeline,
   FcUpload,
   FcPrivacy,
-  FcEngineering
+  FcManager,
+  FcEngineering,
+  FcEditImage
 } from 'react-icons/fc';
 
 const Wrapper = styled.div`
@@ -190,7 +192,7 @@ const SidebarMobile = ({ toggleMobileMenu, org_id, theme, toggleTheme }) => {
                 link={`/app/${org_id}/dashboard`}
                 toggleMenu={() => toggleMobileMenu(false)}
                 svg={<FcBarChart />}
-                title="Dashboard"
+                title=" "
               />
               <MobileSidebarItem
                 theme={theme}
@@ -240,6 +242,27 @@ const SidebarMobile = ({ toggleMobileMenu, org_id, theme, toggleTheme }) => {
                 toggleMenu={() => toggleMobileMenu(false)}
                 svg={<FcEngineering />}
                 title="Settings"
+              />
+              <MobileSidebarItem
+                theme={theme}
+                link={`/app/${org_id}/staffs/create`}
+                toggleMenu={() => toggleMobileMenu(false)}
+                svg={<FcManager />}
+                title="New Employeer"
+              />
+              <MobileSidebarItem
+                theme={theme}
+                link={`/app/${org_id}/staffs`}
+                toggleMenu={() => toggleMobileMenu(false)}
+                svg={<FcManager />}
+                title="Employeer List"
+              />
+              <MobileSidebarItem
+                theme={theme}
+                link={`/app/${org_id}/ckeditor`}
+                toggleMenu={() => toggleMobileMenu(false)}
+                svg={<FcEditImage />}
+                title="CKeditor"
               />
             </Nav>
             <Footer>

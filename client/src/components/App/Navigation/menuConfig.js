@@ -8,7 +8,9 @@ import {
   FcTimeline,
   FcUpload,
   FcPrivacy,
-  FcEngineering
+  FcEngineering,
+  FcManager,
+  FcEditImage
 } from 'react-icons/fc';
 
 const StyledBar = styled(FcBarChart)`
@@ -47,6 +49,16 @@ const StyledOnboarding = styled(FcTimeline)`
 `;
 
 const StyledML = styled(FcGenealogy)`
+  height: 1.3rem;
+  width: 1.3rem;
+`;
+
+const StyledEM = styled(FcManager)`
+  height: 1.6rem;
+  width: 1.6rem;
+`;
+
+const StyledCK = styled(FcEditImage)`
   height: 1.3rem;
   width: 1.3rem;
 `;
@@ -99,5 +111,23 @@ export const getMenus = (org_id) => [
     name: 'Settings',
     route: `/app/${org_id}/settings`,
     icon: <StyledEng />
+  },
+  {
+    id: '9',
+    name: 'New Employeer',
+    route: `/app/${org_id}/staffs/create`,
+    icon: <StyledEM />
+  },
+  {
+    id: '10',
+    name: 'Employeer List',
+    route: `/app/${org_id}/staffs`,
+    icon: <StyledEM />
+  },
+  {
+    id: '11',
+    name: 'CKeditor',
+    route: `/app/${org_id}/ckeditor`,
+    icon: <StyledCK />
   }
 ];

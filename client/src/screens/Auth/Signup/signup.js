@@ -55,12 +55,11 @@ const Signup = () => {
     let email = values.email;
     let password = values.password;
     let username = values.username;
-
+    
     let authRes = await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch((error) => {
-        debugger;
         fetchFailure(error);
       });
 

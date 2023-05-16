@@ -26,14 +26,12 @@ export const verifyUser = async (verify_key) => {
 
 export const saveUsertoDB = async (email, username, firebaseId, verifyKey) => {
   /* Save user to our own db and get unique key from db */
-
   //insert into database
   let text = `INSERT INTO users (username, email, firebase_user_id, verify_key)
               VALUES($1, $2, $3, $4)`;
   let values = [username, email, firebaseId, verifyKey];
 
   let queryResult = await db.query(text, values);
-
   return queryResult.rows[0];
 };
 

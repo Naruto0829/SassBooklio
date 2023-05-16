@@ -119,7 +119,7 @@ const TripleColFeatures = () => (
       </Column>
       <Column>
         <IconWrapper>
-         <svg style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+         <svg style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path>
           </svg>
         </IconWrapper>
@@ -132,7 +132,7 @@ const TripleColFeatures = () => (
       </Column>
       <Column>
         <IconWrapper>
-          <svg stroke="currentColor" style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} stroke-width="0" viewBox="0 0 24 24"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"></path><path d="M7 12h2v5H7zM15 7h2v10h-2zM11 14h2v3h-2zM11 10h2v2h-2z"></path></svg>
+          <svg stroke="currentColor" style={{ "margin": "0.5rem", "height": "2rem", "width": "2rem"}} strokeWidth="0" viewBox="0 0 24 24"  height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"></path><path d="M7 12h2v5H7zM15 7h2v10h-2zM11 14h2v3h-2zM11 10h2v2h-2z"></path></svg>
         </IconWrapper>
 
         <TextWrapper>

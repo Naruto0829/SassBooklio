@@ -16,7 +16,6 @@ import {
 
 export const CreateUser = async (req, res) => {
   let verify_key = req.body.verify_key;
-
   //verify signup key
   let result = await verifyUser(verify_key);
   let user_id = result.id;
@@ -66,7 +65,7 @@ export const SignUp = async (req, res) => {
   //send verification email
   let template = 'verify email';
   let locals = { confirmEmailUrl, username };
-  await sendEmail(email, template, locals);
+  // await sendEmail(email, template, locals);
 
   //save user firebase info to our own db, and get unique user database id
   await saveUsertoDB(email, username, firebaseId, randomBytes);
@@ -81,7 +80,8 @@ export const Login = async (req, res) => {
   //decode the firebase token recieved from frontend
   let decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
   let firebaseId = decodedToken.user_id;
-
+  
+  console.log("here");
   //Check if User exists
   let user = await getUser(email);
 
@@ -94,7 +94,6 @@ export const Login = async (req, res) => {
   }
 
   let user_id = user.id;
-
   res.send({ token: setToken(user_id) });
 };
 

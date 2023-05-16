@@ -39,7 +39,7 @@ const StyledSider = styled(Layout.Sider)`
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 21px;
   height: 72px;
   box-shadow: 0 1px 9px -3px rgba(0, 0, 0, 0.2);
 `;

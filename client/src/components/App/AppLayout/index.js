@@ -111,8 +111,8 @@ const Layout = ({ children }) => {
 
     //save payment info to global state if role is admin
     if (role === 'admin') {
-      stripe_customer_id = result.data[0].stripe_customer_id;
-      subscription_id = result.data[0].subscription_id;
+        stripe_customer_id = result.data[0].stripe_customer_id;
+        subscription_id = result.data[0].subscription_id;
     }
 
     let org = {

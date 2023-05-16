@@ -98,7 +98,6 @@ const Dashboard = () => {
     let params = {
       user_id
     };
-
     const result = await axios.get(`/api/org`, { params, headers }).catch((err) => {
       fetchFailure(err);
     });
@@ -119,10 +118,10 @@ const Dashboard = () => {
     let role = 'admin';
 
     let data = {
-      org_name,
-      role,
-      email,
-      user_id
+        org_name,
+        role,
+        email,
+        user_id
     };
 
     await axios.post(`/api/org`, data, { headers }).catch((err) => {

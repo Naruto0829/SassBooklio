@@ -10,4 +10,4 @@ process.env.DB_NAME = 'testdb';
 process.env.DB_PORT = 5432;
 
 //user set auth secret, mocked
-process.env.AUTH_SECRET = 'Secret';
+process.env.AUTH_SECRET = 'BOOKLIO_SASS_SECRET';
