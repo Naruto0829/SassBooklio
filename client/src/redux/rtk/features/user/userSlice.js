@@ -9,7 +9,7 @@ const initialState = {
 	loading: false,
 };
 
-export const addStaff = createAsyncThunk("user/addStaff", async (values) => {
+export const addStaff = createAsyncThunk("/api/user/addStaff", async (values) => {
 	try {
 		const { data } = await axios({
 			method: "post",
@@ -36,7 +36,7 @@ export const addStaff = createAsyncThunk("user/addStaff", async (values) => {
 	}
 });
 
-export const deleteStaff = createAsyncThunk("user/deleteStaff", async (id) => {
+export const deleteStaff = createAsyncThunk("/api/user/deleteStaff", async (id) => {
 	try {
 		const resp = await axios({
 			method: "patch",

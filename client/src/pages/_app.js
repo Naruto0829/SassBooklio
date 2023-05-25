@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import 'antd/dist/antd.css';
 
+import { Provider } from "react-redux";
 import AuthContext from '../utils/authContext';
 import { authReducer, initialStateAuth } from '../store/reducers/authReducer';
 import { Login, Logout } from '../store/actions/actions';
@@ -23,7 +24,7 @@ import { firebaseApp as firebase } from '../services/firebase';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { pageView } from '../services/analytics';
-
+import store from "../redux/rtk/app/store";
 import { silentAuth } from '../utils/helpers';
 
 const NoLayout = ({ children }) => children;
@@ -86,19 +87,21 @@ function MyApp(props) {
   };
 
   return (
-    <AuthContext.Provider value={{ authState, LogIn, LogOut, firebase }}>
-      <ApiContext.Provider value={{ apiState, fetchFailure, fetchInit, fetchSuccess }}>
-        <OrgContext.Provider value={{ SetOrg, orgState }}>
-          <CaslContext.Provider value={ability}>
-            <ThemeProvider theme={theme}>
-              <Layout>
-                <Component {...pageProps} />
-              </Layout>
-            </ThemeProvider>
-          </CaslContext.Provider>
-        </OrgContext.Provider>
-      </ApiContext.Provider>
-    </AuthContext.Provider>
+    <Provider store={store}>
+      <AuthContext.Provider value={{ authState, LogIn, LogOut, firebase }}>
+        <ApiContext.Provider value={{ apiState, fetchFailure, fetchInit, fetchSuccess }}>
+          <OrgContext.Provider value={{ SetOrg, orgState }}>
+            <CaslContext.Provider value={ability}>
+              <ThemeProvider theme={theme}>
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
+              </ThemeProvider>
+            </CaslContext.Provider>
+          </OrgContext.Provider>
+        </ApiContext.Provider>
+      </AuthContext.Provider>
+    </Provider>
   );
 }
 

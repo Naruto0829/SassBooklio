@@ -23,6 +23,7 @@ import stripeApi from './API/stripe.js';
 import stripeWebhook from './API/stripeWebhooks.js';
 import roleApi from './API/roles.js';
 import usersApi from './API/users.js';
+import employeesApi from './API/employees.js';
 import orgApi from './API/org.js';
 
 const app = express();
@@ -46,6 +47,7 @@ app.use('/api', orgApi);
 app.use('/api', todoApi);
 app.use('/api', roleApi);
 app.use('/api', usersApi);
+app.use('/api', employeesApi);
 
 // error handling
 app.use(errorHandler);
